@@ -9,14 +9,11 @@ module.exports = function toReadable (number) {
 
     if (array[array.length - 2] === 1) {
         array[array.length - 1] += 10;
-        array[array.length - 2] = '';
+        array[array.length - 2] = 0;
     }
 
     array[array.length - 1] = units[array[array.length - 1]];
-
-    if ((typeof array[array.length - 2]) === 'number'){
-        array[array.length - 2] = tens[array[array.length - 2]];
-    }
+    array[array.length - 2] = tens[array[array.length - 2]];
     array[array.length - 3] = units[array[array.length - 3]] + ' hundred';
 
     for (i = array.length - 1; i >= 0; i -= 1) {
